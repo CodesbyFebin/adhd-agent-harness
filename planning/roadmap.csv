@@ -1,0 +1,31 @@
+id,priority,milestone,title,acceptance,status,owner
+AH-001,P0,M1,Separate heuristic and judge types,Heuristic records cannot enter release evaluation; UI labels identify their origin.,proposed,maintainer to assign
+AH-002,P0,M1,Freeze provenance identities,"Cases, rubric, runner, model, tools and skill hashes recorded; mutations invalidate comparison.",proposed,maintainer to assign
+AH-003,P0,M1,Add scorer adversarial tests,Fabricated edit and unsafe text containing preview do not produce a safety clearance.,proposed,maintainer to assign
+AH-004,P0,M1,Add protocol arithmetic tests,"Fourteen unique IDs, historical aggregates and rounded deltas stay consistent.",proposed,maintainer to assign
+AH-005,P0,M1,Audit build portability,Build and migration are separate; required platform environment documented.,proposed,maintainer to assign
+AH-006,P1,M1,Document browser persistence,"Filings notice, export and reset behavior match actual storage.",proposed,maintainer to assign
+AH-007,P1,M2,Add route-addressable docs,Each public view has a real route and server-readable content.,proposed,maintainer to assign
+AH-008,P1,M2,Create first-run example,New user distinguishes shape preview from judged benchmark.,proposed,maintainer to assign
+AH-009,P1,M2,Add keyboard journey tests,"Example, editing, filing, export and reset work without pointer input.",proposed,maintainer to assign
+AH-010,P1,M2,Validate imports,"Malformed, oversized and incompatible input is rejected without data loss.",proposed,maintainer to assign
+AH-011,P1,M2,Create skill registry,"Twenty entries have version, source, trigger and explicit evaluation status.",proposed,maintainer to assign
+AH-012,P1,M2,Create function parity fixtures,Thirty helper examples retain behavior across chosen language implementations.,proposed,maintainer to assign
+AH-013,P0,M3,Implement workspace path boundary,"Traversal, symlinks and external roots are rejected in hostile fixtures.",proposed,maintainer to assign
+AH-014,P0,M3,Implement command gateway,"Arguments, timeout, output cap, environment and cancellation are controlled.",proposed,maintainer to assign
+AH-015,P0,M3,Bind approvals to operations,Changed command or target cannot reuse an approval.,proposed,maintainer to assign
+AH-016,P0,M3,Build real-edit fixture,Exact README typo changed; diff and verification captured with actual tools.,proposed,maintainer to assign
+AH-017,P1,M3,Implement task state machine,Illegal transitions rejected; textual completion alone cannot finish a task.,proposed,maintainer to assign
+AH-018,P1,M3,Write event journal,Ordered events survive restart; evidence gaps remain explicit.,proposed,maintainer to assign
+AH-019,P1,M3,Capture verification evidence,Command and exit code recorded; unknown checks never become passes.,proposed,maintainer to assign
+AH-020,P0,M4,Validate complete evaluation coverage,"Missing conditions, duplicates and invalid trial keys prevent ranking.",proposed,maintainer to assign
+AH-021,P1,M4,Implement resumable generation,Retries preserve failures and cannot silently replace recorded outputs.,proposed,maintainer to assign
+AH-022,P1,M4,Implement blind judge mapping,Condition names hidden; label mapping reproducible and kept out of judge prompt.,proposed,maintainer to assign
+AH-023,P1,M4,Publish cost and coverage report,Unknown costs remain null; protocol scope stated with every report.,proposed,maintainer to assign
+AH-024,P1,M4,Export reproducible evidence bundle,Independent verifier recomputes aggregate from original rows.,proposed,maintainer to assign
+AH-025,P2,M5,Add second qualified runner,Same contract fixtures pass; unsupported capabilities shown.,proposed,maintainer to assign
+AH-026,P2,M5,Prototype editor integration,Scoped task and diff flow works without granting unrestricted authority.,proposed,maintainer to assign
+AH-027,P1,M5,Test interruption recovery,Resume reconstructs recorded state and requires revalidation before mutation.,proposed,maintainer to assign
+AH-028,P1,M5,Run accessibility review,"Keyboard, zoom, contrast and screen-reader results documented with limitations.",proposed,maintainer to assign
+AH-029,P1,M5,Publish contribution journey,"Starter tasks have owner, acceptance criteria and reproducible setup.",proposed,maintainer to assign
+AH-030,P2,M5,Publish honest release demo,"Actual diff, failure, recovery and evidence shown; no unsupported best-in-class claim.",proposed,maintainer to assign

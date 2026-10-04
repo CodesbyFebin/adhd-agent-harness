@@ -2,6 +2,8 @@
 
 20 populated agent workflows, 30 runnable Python functions, and 57 static HTML pages. Built for clear coding-agent work with evidence-aware status reports. A writing style does not diagnose ADHD.
 
+Planning edition 1.0 is in [docs/MASTER_BLUEPRINT.md](docs/MASTER_BLUEPRINT.md). It is a proposal. See [docs/ADOPTION.md](docs/ADOPTION.md) for what was taken from that package and what was left out. The historical candidate stays held.
+
 ## Quick start
 
 Python 3.10+; standard library only. No package install or model key needed.

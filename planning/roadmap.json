@@ -1,0 +1,276 @@
+{
+  "version": 1,
+  "schedule": "suggested, not committed",
+  "issues": [
+    {
+      "id": "AH-001",
+      "priority": "P0",
+      "milestone": "M1",
+      "title": "Separate heuristic and judge types",
+      "acceptance": "Heuristic records cannot enter release evaluation; UI labels identify their origin.",
+      "status": "proposed",
+      "owner": "maintainer to assign"
+    },
+    {
+      "id": "AH-002",
+      "priority": "P0",
+      "milestone": "M1",
+      "title": "Freeze provenance identities",
+      "acceptance": "Cases, rubric, runner, model, tools and skill hashes recorded; mutations invalidate comparison.",
+      "status": "proposed",
+      "owner": "maintainer to assign"
+    },
+    {
+      "id": "AH-003",
+      "priority": "P0",
+      "milestone": "M1",
+      "title": "Add scorer adversarial tests",
+      "acceptance": "Fabricated edit and unsafe text containing preview do not produce a safety clearance.",
+      "status": "proposed",
+      "owner": "maintainer to assign"
+    },
+    {
+      "id": "AH-004",
+      "priority": "P0",
+      "milestone": "M1",
+      "title": "Add protocol arithmetic tests",
+      "acceptance": "Fourteen unique IDs, historical aggregates and rounded deltas stay consistent.",
+      "status": "proposed",
+      "owner": "maintainer to assign"
+    },
+    {
+      "id": "AH-005",
+      "priority": "P0",
+      "milestone": "M1",
+      "title": "Audit build portability",
+      "acceptance": "Build and migration are separate; required platform environment documented.",
+      "status": "proposed",
+      "owner": "maintainer to assign"
+    },
+    {
+      "id": "AH-006",
+      "priority": "P1",
+      "milestone": "M1",
+      "title": "Document browser persistence",
+      "acceptance": "Filings notice, export and reset behavior match actual storage.",
+      "status": "proposed",
+      "owner": "maintainer to assign"
+    },
+    {
+      "id": "AH-007",
+      "priority": "P1",
+      "milestone": "M2",
+      "title": "Add route-addressable docs",
+      "acceptance": "Each public view has a real route and server-readable content.",
+      "status": "proposed",
+      "owner": "maintainer to assign"
+    },
+    {
+      "id": "AH-008",
+      "priority": "P1",
+      "milestone": "M2",
+      "title": "Create first-run example",
+      "acceptance": "New user distinguishes shape preview from judged benchmark.",
+      "status": "proposed",
+      "owner": "maintainer to assign"
+    },
+    {
+      "id": "AH-009",
+      "priority": "P1",
+      "milestone": "M2",
+      "title": "Add keyboard journey tests",
+      "acceptance": "Example, editing, filing, export and reset work without pointer input.",
+      "status": "proposed",
+      "owner": "maintainer to assign"
+    },
+    {
+      "id": "AH-010",
+      "priority": "P1",
+      "milestone": "M2",
+      "title": "Validate imports",
+      "acceptance": "Malformed, oversized and incompatible input is rejected without data loss.",
+      "status": "proposed",
+      "owner": "maintainer to assign"
+    },
+    {
+      "id": "AH-011",
+      "priority": "P1",
+      "milestone": "M2",
+      "title": "Create skill registry",
+      "acceptance": "Twenty entries have version, source, trigger and explicit evaluation status.",
+      "status": "proposed",
+      "owner": "maintainer to assign"
+    },
+    {
+      "id": "AH-012",
+      "priority": "P1",
+      "milestone": "M2",
+      "title": "Create function parity fixtures",
+      "acceptance": "Thirty helper examples retain behavior across chosen language implementations.",
+      "status": "proposed",
+      "owner": "maintainer to assign"
+    },
+    {
+      "id": "AH-013",
+      "priority": "P0",
+      "milestone": "M3",
+      "title": "Implement workspace path boundary",
+      "acceptance": "Traversal, symlinks and external roots are rejected in hostile fixtures.",
+      "status": "proposed",
+      "owner": "maintainer to assign"
+    },
+    {
+      "id": "AH-014",
+      "priority": "P0",
+      "milestone": "M3",
+      "title": "Implement command gateway",
+      "acceptance": "Arguments, timeout, output cap, environment and cancellation are controlled.",
+      "status": "proposed",
+      "owner": "maintainer to assign"
+    },
+    {
+      "id": "AH-015",
+      "priority": "P0",
+      "milestone": "M3",
+      "title": "Bind approvals to operations",
+      "acceptance": "Changed command or target cannot reuse an approval.",
+      "status": "proposed",
+      "owner": "maintainer to assign"
+    },
+    {
+      "id": "AH-016",
+      "priority": "P0",
+      "milestone": "M3",
+      "title": "Build real-edit fixture",
+      "acceptance": "Exact README typo changed; diff and verification captured with actual tools.",
+      "status": "proposed",
+      "owner": "maintainer to assign"
+    },
+    {
+      "id": "AH-017",
+      "priority": "P1",
+      "milestone": "M3",
+      "title": "Implement task state machine",
+      "acceptance": "Illegal transitions rejected; textual completion alone cannot finish a task.",
+      "status": "proposed",
+      "owner": "maintainer to assign"
+    },
+    {
+      "id": "AH-018",
+      "priority": "P1",
+      "milestone": "M3",
+      "title": "Write event journal",
+      "acceptance": "Ordered events survive restart; evidence gaps remain explicit.",
+      "status": "proposed",
+      "owner": "maintainer to assign"
+    },
+    {
+      "id": "AH-019",
+      "priority": "P1",
+      "milestone": "M3",
+      "title": "Capture verification evidence",
+      "acceptance": "Command and exit code recorded; unknown checks never become passes.",
+      "status": "proposed",
+      "owner": "maintainer to assign"
+    },
+    {
+      "id": "AH-020",
+      "priority": "P0",
+      "milestone": "M4",
+      "title": "Validate complete evaluation coverage",
+      "acceptance": "Missing conditions, duplicates and invalid trial keys prevent ranking.",
+      "status": "proposed",
+      "owner": "maintainer to assign"
+    },
+    {
+      "id": "AH-021",
+      "priority": "P1",
+      "milestone": "M4",
+      "title": "Implement resumable generation",
+      "acceptance": "Retries preserve failures and cannot silently replace recorded outputs.",
+      "status": "proposed",
+      "owner": "maintainer to assign"
+    },
+    {
+      "id": "AH-022",
+      "priority": "P1",
+      "milestone": "M4",
+      "title": "Implement blind judge mapping",
+      "acceptance": "Condition names hidden; label mapping reproducible and kept out of judge prompt.",
+      "status": "proposed",
+      "owner": "maintainer to assign"
+    },
+    {
+      "id": "AH-023",
+      "priority": "P1",
+      "milestone": "M4",
+      "title": "Publish cost and coverage report",
+      "acceptance": "Unknown costs remain null; protocol scope stated with every report.",
+      "status": "proposed",
+      "owner": "maintainer to assign"
+    },
+    {
+      "id": "AH-024",
+      "priority": "P1",
+      "milestone": "M4",
+      "title": "Export reproducible evidence bundle",
+      "acceptance": "Independent verifier recomputes aggregate from original rows.",
+      "status": "proposed",
+      "owner": "maintainer to assign"
+    },
+    {
+      "id": "AH-025",
+      "priority": "P2",
+      "milestone": "M5",
+      "title": "Add second qualified runner",
+      "acceptance": "Same contract fixtures pass; unsupported capabilities shown.",
+      "status": "proposed",
+      "owner": "maintainer to assign"
+    },
+    {
+      "id": "AH-026",
+      "priority": "P2",
+      "milestone": "M5",
+      "title": "Prototype editor integration",
+      "acceptance": "Scoped task and diff flow works without granting unrestricted authority.",
+      "status": "proposed",
+      "owner": "maintainer to assign"
+    },
+    {
+      "id": "AH-027",
+      "priority": "P1",
+      "milestone": "M5",
+      "title": "Test interruption recovery",
+      "acceptance": "Resume reconstructs recorded state and requires revalidation before mutation.",
+      "status": "proposed",
+      "owner": "maintainer to assign"
+    },
+    {
+      "id": "AH-028",
+      "priority": "P1",
+      "milestone": "M5",
+      "title": "Run accessibility review",
+      "acceptance": "Keyboard, zoom, contrast and screen-reader results documented with limitations.",
+      "status": "proposed",
+      "owner": "maintainer to assign"
+    },
+    {
+      "id": "AH-029",
+      "priority": "P1",
+      "milestone": "M5",
+      "title": "Publish contribution journey",
+      "acceptance": "Starter tasks have owner, acceptance criteria and reproducible setup.",
+      "status": "proposed",
+      "owner": "maintainer to assign"
+    },
+    {
+      "id": "AH-030",
+      "priority": "P2",
+      "milestone": "M5",
+      "title": "Publish honest release demo",
+      "acceptance": "Actual diff, failure, recovery and evidence shown; no unsupported best-in-class claim.",
+      "status": "proposed",
+      "owner": "maintainer to assign"
+    }
+  ]
+}
