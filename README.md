@@ -20,7 +20,7 @@ Open http://localhost:8000. The ZIP includes the generated `dist/` site and ever
 - `skills/`: 20 SKILL.md workflows with triggers, bounded instructions, examples, and linked helpers. These are repository artifacts, not installed personal ChatGPT skills.
 - `src/solvers.py`: 30 deterministic functions. `data/functions.json` records signatures and populated input/output examples; `examples/` contains CLI-ready JSON.
 - `dist/`: Board, Bench, Skills, Functions, Gate, Rules, and 50 detail pages. Mobile layouts, keyboard navigation, semantic HTML, canonical URLs, unique metadata, JSON-LD, sitemap, robots.txt, and llms.txt.
-- `evals/`: preserved historical board plus pinned upstream published source and SHA-256 provenance. `evals/evidence.json` splits the evidence row. The published summary is pinned and passes. Trial rows are a separate row and fail: 0 of 84. The three partial-success deltas (+0.05, -0.70, -1.25) are a prose excerpt and do not count. `evidence_complete` stays false.
+- `evals/`: preserved historical board plus pinned upstream published source and SHA-256 provenance. The evidence row is now two rows. `published_summary_pinned` passes when the SHA-256 of `evals/upstream/RESULTS.md` matches provenance (`a9f0375594a94d2e1c4205aa6047d0213a45d9dc163ff1a63c12a534a7941b8f`). That new row does not release. Trial rows fail: 0 of 84. The three partial-success deltas (+0.05, -0.70, -1.25) are a prose excerpt and do not count. `evidence_complete` stays false.
 - `tests/`: catalog, links, release negative controls, invalid scores, protocol mismatch, coverage, and output-contract checks.
 
 ## Publish and indexing

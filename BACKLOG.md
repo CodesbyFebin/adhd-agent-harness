@@ -25,7 +25,7 @@ partial-success trial deltas: +0.05, -0.70, -1.25. Two of three trials were wors
 - **H17 CI that reruns the model eval** (rejected) — Arithmetic CI is already on the repo. A job that reruns the model and diffs new scores would be a new board, not a check of this file.
 - **H18 Append-only regression ledger** (shipped) — Two findings stay: agent-owned-edit is unpassable as run, and partial-success averaged −0.63 with two of three trials worse.
 - **H19 Empirical noise floor** (proposed) — Upstream called single-case deltas under about 0.5 noise at three trials. That heuristic is not recomputed here.
-- **H20 Ship decision that signs every gate row** (shipped) — release_gate has six checks: blockers, correctness, safety, weighted score, evidence, comparability. Score is not release.
+- **H20 Ship decision that signs every gate row** (shipped) — Release still depends on blockers, correctness, safety, weighted score, evidence_complete, and comparability. The pinned-summary row is new and does not release. Score is not release.
 
 ## Features
 

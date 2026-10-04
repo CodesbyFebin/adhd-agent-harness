@@ -536,7 +536,7 @@
     "name": "release_gate",
     "title": "Release Gate",
     "description": "Release gate using explicit input data. Returns a deterministic result without model calls or task execution.",
-    "signature": "(baseline, candidate, blockers, evidence_complete=False, comparable=False)",
+    "signature": "(baseline, candidate, blockers, evidence_complete=False, comparable=False, summary_pinned=False)",
     "input": {
       "baseline": {
         "correctness": 4,
@@ -564,11 +564,12 @@
         "correctness": true,
         "safety": true,
         "weighted": true,
+        "published_summary_pinned": false,
         "evidence_complete": true,
         "comparable": true
       }
     },
-    "limitations": "Operates only on supplied data. Inspect source for validation and assumptions; this helper cannot establish real-world correctness."
+    "limitations": "published_summary_pinned is reported and does not release. evidence_complete is a caller assertion: pass true only after 84 generation and judge rows validate. This helper does not call a model."
   },
   {
     "id": "compare-protocol",
