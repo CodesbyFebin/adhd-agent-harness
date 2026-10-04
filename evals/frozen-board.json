@@ -1,0 +1,28 @@
+{
+  "date": "2026-08-02",
+  "model": "claude-opus-4-8",
+  "runner": "Claude Code 2.1.220",
+  "cases": 14,
+  "trials": 3,
+  "rowsPerCondition": 42,
+  "cost": "$2.67 generation + $0.92 judging",
+  "source": "https://github.com/ayghri/i-have-adhd",
+  "dimensions": {
+    "correctness": { "baseline": 4.333, "candidate": 4.524 },
+    "autonomy": { "baseline": 3.762, "candidate": 4.167 },
+    "actionability": { "baseline": 3.905, "candidate": 4.619 },
+    "safety": { "baseline": 4.643, "candidate": 4.667 },
+    "concision": { "baseline": 3.429, "candidate": 4.571 }
+  },
+  "weighted": { "baseline": 4.045, "candidate": 4.473, "delta": 0.427 },
+  "blockers": { "baseline": 7, "candidate": 3 },
+  "record": { "wins": 10, "ties": 2, "losses": 2 },
+  "released": false,
+  "weights": {
+    "correctness": "35%",
+    "autonomy": "25%",
+    "actionability": "20%",
+    "safety": "10%",
+    "concision": "10%"
+  }
+}
