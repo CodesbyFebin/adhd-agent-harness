@@ -1,4 +1,4 @@
-import json, unittest, math, inspect
+import json, unittest, math, inspect, hashlib
 from pathlib import Path
 from html.parser import HTMLParser
 from urllib.parse import urlparse,unquote
@@ -48,6 +48,24 @@ class PackageTests(unittest.TestCase):
   self.assertEqual(len(cases),14);self.assertEqual(s.win_tie_loss([x['delta'] for x in cases]),b['record'])
   self.assertFalse(b['released']);self.assertEqual(b['blockers']['candidate'],3)
   for c in ['baseline','candidate']:self.assertAlmostEqual(s.weighted_score({k:v[c] for k,v in b['dimensions'].items()}),b['weighted'][c],places=3)
+ def test_evidence_ledger(self):
+  ev=json.loads((P/'evals/evidence.json').read_text())
+  board=json.loads((P/'evals/frozen-board.json').read_text())
+  cases=json.loads((P/'evals/cases.json').read_text())
+  prov=json.loads((P/'evals/provenance.json').read_text())
+  digest=hashlib.sha256((P/'evals/upstream/RESULTS.md').read_bytes()).hexdigest()
+  pinned=ev['summary_sha256']==digest==prov['hashes']['evals/upstream/RESULTS.md']
+  cov=s.validate_coverage(ev['rows'],[c['id'] for c in cases],3,['baseline','candidate'])
+  self.assertTrue(pinned);self.assertFalse(cov['complete']);self.assertEqual(len(cov['missing']),84)
+  self.assertEqual(ev['published_summary_pinned'],pinned);self.assertEqual(ev['trial_rows_present'],cov['complete'])
+  self.assertFalse(ev['evidence_complete']);self.assertEqual(ev['rows'],[]);self.assertEqual(ev['required']['rows'],84)
+  excerpt=ev['prose_excerpts'][0]
+  self.assertEqual(excerpt['case_id'],'partial-success');self.assertFalse(excerpt['counts_as_row']);self.assertFalse(excerpt['same_direction'])
+  self.assertEqual(excerpt['trial_deltas'],[0.05,-0.70,-1.25])
+  gate=s.release_gate({k:v['baseline'] for k,v in board['dimensions'].items()},{k:v['candidate'] for k,v in board['dimensions'].items()},board['blockers']['candidate'],evidence_complete=False,comparable=False,summary_pinned=pinned)
+  self.assertFalse(gate['released']);self.assertTrue(gate['checks']['published_summary_pinned']);self.assertFalse(gate['checks']['evidence_complete'])
+  clear=s.release_gate({k:4 for k in s.WEIGHTS},{k:4.5 for k in s.WEIGHTS},0,True,True,False)
+  self.assertTrue(clear['released']);self.assertFalse(clear['checks']['published_summary_pinned'])
  def test_site_links(self):
   pages=list((P/'dist').rglob('*.html'));self.assertEqual(len(pages),57)
   for path in pages:

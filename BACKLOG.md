@@ -16,7 +16,7 @@ partial-success trial deltas: +0.05, -0.70, -1.25. Two of three trials were wors
 - **H8 Dual-judge agreement** (rejected) — No judge responses were published. Cohen’s kappa cannot be computed from the aggregates.
 - **H9 Blind pairwise ranking next to absolute scores** (separate) — A new protocol. It does not rewrite the absolute scores already frozen.
 - **H10 Five hand-scored calibration cases** (proposed) — Useful on the next run. There is no hand-scored set in this snapshot.
-- **H11 Log judge prompts and raw responses** (rejected) — Upstream RESULTS.md quotes three partial-success deltas and one grader sentence. It does not contain the 84 judge rows. Copying the three numbers into a file would not make the evidence complete.
+- **H11 Log judge prompts and raw responses** (rejected) — evals/evidence.json pins the published summary and records 0 of 84 trial rows. The three partial-success deltas are a prose excerpt and do not count. Copying them into a file does not make evidence complete.
 - **H12 Split agent-owned-edit by tool availability** (separate) — The historical failure stays. A tool-enabled fixture is a different experiment, not a repair of this score.
 - **H13 Pin the runner in the frozen record** (shipped) — Claude Code 2.1.220 is in the frozen board, not only in prose.
 - **H14 Re-freeze when the model or runner changes** (proposed) — Policy only. A version change makes a new board. It does not edit this one.
@@ -25,7 +25,7 @@ partial-success trial deltas: +0.05, -0.70, -1.25. Two of three trials were wors
 - **H17 CI that reruns the model eval** (rejected) — Arithmetic CI is already on the repo. A job that reruns the model and diffs new scores would be a new board, not a check of this file.
 - **H18 Append-only regression ledger** (shipped) — Two findings stay: agent-owned-edit is unpassable as run, and partial-success averaged −0.63 with two of three trials worse.
 - **H19 Empirical noise floor** (proposed) — Upstream called single-case deltas under about 0.5 noise at three trials. That heuristic is not recomputed here.
-- **H20 Ship decision that signs every gate row** (shipped) — release_gate has six checks: blockers, correctness, safety, weighted score, evidence, comparability. Score is not release.
+- **H20 Ship decision that signs every gate row** (shipped) — Release still depends on blockers, correctness, safety, weighted score, evidence_complete, and comparability. The pinned-summary row is new and does not release. Score is not release.
 
 ## Features
 
