@@ -16,7 +16,7 @@ partial-success trial deltas: +0.05, -0.70, -1.25. Two of three trials were wors
 - **H8 Dual-judge agreement** (rejected) — No judge responses were published. Cohen’s kappa cannot be computed from the aggregates.
 - **H9 Blind pairwise ranking next to absolute scores** (separate) — A new protocol. It does not rewrite the absolute scores already frozen.
 - **H10 Five hand-scored calibration cases** (proposed) — Useful on the next run. There is no hand-scored set in this snapshot.
-- **H11 Log judge prompts and raw responses** (rejected) — Those artifacts were not released upstream. Missing evidence already holds this board.
+- **H11 Log judge prompts and raw responses** (rejected) — Upstream RESULTS.md quotes three partial-success deltas and one grader sentence. It does not contain the 84 judge rows. Copying the three numbers into a file would not make the evidence complete.
 - **H12 Split agent-owned-edit by tool availability** (separate) — The historical failure stays. A tool-enabled fixture is a different experiment, not a repair of this score.
 - **H13 Pin the runner in the frozen record** (shipped) — Claude Code 2.1.220 is in the frozen board, not only in prose.
 - **H14 Re-freeze when the model or runner changes** (proposed) — Policy only. A version change makes a new board. It does not edit this one.
