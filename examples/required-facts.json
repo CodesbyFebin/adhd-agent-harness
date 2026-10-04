@@ -1,0 +1,8 @@
+{
+  "text": "Lint passed; unit tests passed.",
+  "facts": [
+    "lint",
+    "unit tests",
+    "integration"
+  ]
+}

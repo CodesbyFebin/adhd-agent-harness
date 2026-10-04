@@ -1,0 +1,9 @@
+{
+  "required": [
+    "edit",
+    "test"
+  ],
+  "available": [
+    "test"
+  ]
+}

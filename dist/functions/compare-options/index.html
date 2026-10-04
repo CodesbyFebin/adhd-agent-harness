@@ -1,0 +1,31 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Compare Options | ADHD Agent Harness</title><meta name="description" content="Compare options using explicit input data. Returns a deterministic result without model calls or task execution."><meta name="robots" content="index,follow"><link rel="canonical" href="https://codesbyfebin.github.io/adhd-agent-harness/functions/compare-options/"><meta property="og:title" content="Compare Options"><meta property="og:description" content="Compare options using explicit input data. Returns a deterministic result without model calls or task execution."><meta property="og:url" content="https://codesbyfebin.github.io/adhd-agent-harness/functions/compare-options/"><link rel="stylesheet" href="../../assets/style.css"><script type="application/ld+json">{"@context": "https://schema.org", "@type": "WebPage", "name": "Compare Options", "description": "Compare options using explicit input data. Returns a deterministic result without model calls or task execution.", "url": "https://codesbyfebin.github.io/adhd-agent-harness/functions/compare-options/"}</script></head><body><a class="skip" href="#main">Skip to content</a><header><a href="../../index.html">CodesbyFebin / ADHD Agent Harness</a><nav aria-label="Main navigation"><a href="../../board/index.html">Board</a> <a href="../../bench/index.html">Bench</a> <a href="../../skills/index.html">Skills</a> <a href="../../functions/index.html">Functions</a> <a href="../../gate/index.html">Gate</a> <a href="../../rules/index.html">Rules</a></nav></header><main id="main"><p class="eyebrow">EVIDENCE BEFORE RELEASE</p><h1>Compare Options</h1><p>Compare options using explicit input data. Returns a deterministic result without model calls or task execution.</p><h2>Signature</h2><pre><code>compare_options(options, criteria)</code></pre><h2>Example input</h2><pre><code>{
+  &quot;options&quot;: [
+    {
+      &quot;name&quot;: &quot;merge&quot;,
+      &quot;history&quot;: &quot;preserved&quot;
+    },
+    {
+      &quot;name&quot;: &quot;rebase&quot;,
+      &quot;history&quot;: &quot;rewritten&quot;
+    }
+  ],
+  &quot;criteria&quot;: [
+    &quot;history&quot;,
+    &quot;risk&quot;
+  ]
+}</code></pre><h2>Example output</h2><pre><code>[
+  {
+    &quot;name&quot;: &quot;merge&quot;,
+    &quot;criteria&quot;: {
+      &quot;history&quot;: &quot;preserved&quot;,
+      &quot;risk&quot;: &quot;unknown&quot;
+    }
+  },
+  {
+    &quot;name&quot;: &quot;rebase&quot;,
+    &quot;criteria&quot;: {
+      &quot;history&quot;: &quot;rewritten&quot;,
+      &quot;risk&quot;: &quot;unknown&quot;
+    }
+  }
+]</code></pre><h2>Run from repository root</h2><pre><code>python scripts/solve.py compare_options &lt; examples/compare-options.json</code></pre><h2>Limits</h2><p>Operates only on supplied data. Inspect source for validation and assumptions; this helper cannot establish real-world correctness.</p><h2>Related functions</h2><ul><li><a href="../rollback-plan/index.html">Rollback Plan</a></li><li><a href="../resume-context/index.html">Resume Context</a></li><li><a href="../partition-scope/index.html">Partition Scope</a></li></ul></main><footer>20 new skills · 30 deterministic helpers · New workflows are unbenchmarked. A writing style does not diagnose ADHD.</footer></body></html>

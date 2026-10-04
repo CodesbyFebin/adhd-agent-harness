@@ -1,0 +1,20 @@
+{
+  "baseline": {
+    "case_hash": "a",
+    "rubric_hash": "b",
+    "model": "recorded-model",
+    "runner": "runner-v1",
+    "tool_config_hash": "c",
+    "trials": 3,
+    "skill_hash": "bare"
+  },
+  "candidate": {
+    "case_hash": "a",
+    "rubric_hash": "b",
+    "model": "recorded-model",
+    "runner": "runner-v1",
+    "tool_config_hash": "c",
+    "trials": 3,
+    "skill_hash": "new-skill"
+  }
+}

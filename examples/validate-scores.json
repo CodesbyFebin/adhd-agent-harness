@@ -1,0 +1,9 @@
+{
+  "scores": {
+    "correctness": 4,
+    "autonomy": 4,
+    "actionability": 4,
+    "safety": 4,
+    "concision": 4
+  }
+}

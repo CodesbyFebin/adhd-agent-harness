@@ -1,0 +1,740 @@
+[
+  {
+    "id": "first-line",
+    "name": "first_line",
+    "title": "First Line",
+    "description": "First line using explicit input data. Returns a deterministic result without model calls or task execution.",
+    "signature": "(text)",
+    "input": {
+      "text": "\n102.\nExplanation"
+    },
+    "output": "102.",
+    "limitations": "Operates only on supplied data. Inspect source for validation and assumptions; this helper cannot establish real-world correctness."
+  },
+  {
+    "id": "required-facts",
+    "name": "required_facts",
+    "title": "Required Facts",
+    "description": "Required facts using explicit input data. Returns a deterministic result without model calls or task execution.",
+    "signature": "(text, facts)",
+    "input": {
+      "text": "Lint passed; unit tests passed.",
+      "facts": [
+        "lint",
+        "unit tests",
+        "integration"
+      ]
+    },
+    "output": {
+      "present": [
+        "lint",
+        "unit tests"
+      ],
+      "missing": [
+        "integration"
+      ]
+    },
+    "limitations": "Operates only on supplied data. Inspect source for validation and assumptions; this helper cannot establish real-world correctness."
+  },
+  {
+    "id": "detect-closers",
+    "name": "detect_closers",
+    "title": "Detect Closers",
+    "description": "Detect closers using explicit input data. Returns a deterministic result without model calls or task execution.",
+    "signature": "(text)",
+    "input": {
+      "text": "Done. Hope this helps!"
+    },
+    "output": [
+      "hope this helps"
+    ],
+    "limitations": "Operates only on supplied data. Inspect source for validation and assumptions; this helper cannot establish real-world correctness."
+  },
+  {
+    "id": "detect-preamble",
+    "name": "detect_preamble",
+    "title": "Detect Preamble",
+    "description": "Detect preamble using explicit input data. Returns a deterministic result without model calls or task execution.",
+    "signature": "(text)",
+    "input": {
+      "text": "Great question! Here is the answer."
+    },
+    "output": true,
+    "limitations": "Operates only on supplied data. Inspect source for validation and assumptions; this helper cannot establish real-world correctness."
+  },
+  {
+    "id": "check-output-contract",
+    "name": "check_output_contract",
+    "title": "Check Output Contract",
+    "description": "Check output contract using explicit input data. Returns a deterministic result without model calls or task execution.",
+    "signature": "(text, contract)",
+    "input": {
+      "text": "```ts\nconst n = 2;\n```",
+      "contract": "code-only"
+    },
+    "output": true,
+    "limitations": "Operates only on supplied data. Inspect source for validation and assumptions; this helper cannot establish real-world correctness."
+  },
+  {
+    "id": "shape-precheck",
+    "name": "shape_precheck",
+    "title": "Shape Precheck",
+    "description": "Shape precheck using explicit input data. Returns a deterministic result without model calls or task execution.",
+    "signature": "(text, facts)",
+    "input": {
+      "text": "Lint passed. Integration failed.",
+      "facts": [
+        "lint",
+        "integration"
+      ]
+    },
+    "output": {
+      "checks": {
+        "first_line_present": true,
+        "no_preamble": true,
+        "required_facts_present": true,
+        "no_generic_closer": true
+      },
+      "passed": 4,
+      "total": 4,
+      "missing": [],
+      "scope": "shape-only; refusal correctness and factual accuracy unverified"
+    },
+    "limitations": "Shape only: never a quality score or release verdict."
+  },
+  {
+    "id": "summarize-checks",
+    "name": "summarize_checks",
+    "title": "Summarize Checks",
+    "description": "Summarize checks using explicit input data. Returns a deterministic result without model calls or task execution.",
+    "signature": "(checks)",
+    "input": {
+      "checks": [
+        {
+          "name": "lint",
+          "status": "PASS"
+        },
+        {
+          "name": "integration",
+          "status": "FAIL"
+        }
+      ]
+    },
+    "output": {
+      "PASS": [
+        "lint"
+      ],
+      "FAIL": [
+        "integration"
+      ],
+      "BLOCKED": [],
+      "UNKNOWN": []
+    },
+    "limitations": "Operates only on supplied data. Inspect source for validation and assumptions; this helper cannot establish real-world correctness."
+  },
+  {
+    "id": "error-report",
+    "name": "error_report",
+    "title": "Error Report",
+    "description": "Error report using explicit input data. Returns a deterministic result without model calls or task execution.",
+    "signature": "(location, symptom, cause=None)",
+    "input": {
+      "location": "auth.spec.ts:42",
+      "symptom": "expected 200, got 401"
+    },
+    "output": {
+      "location": "auth.spec.ts:42",
+      "observation": "expected 200, got 401",
+      "cause": "unconfirmed",
+      "cause_supported": false
+    },
+    "limitations": "Operates only on supplied data. Inspect source for validation and assumptions; this helper cannot establish real-world correctness."
+  },
+  {
+    "id": "rank-hypotheses",
+    "name": "rank_hypotheses",
+    "title": "Rank Hypotheses",
+    "description": "Rank hypotheses using explicit input data. Returns a deterministic result without model calls or task execution.",
+    "signature": "(hypotheses)",
+    "input": {
+      "hypotheses": [
+        {
+          "name": "Expired token",
+          "evidence_count": 0,
+          "check": "Inspect expiry"
+        },
+        {
+          "name": "Missing header",
+          "evidence_count": 1,
+          "check": "Inspect request"
+        }
+      ]
+    },
+    "output": [
+      {
+        "name": "Missing header",
+        "evidence_count": 1,
+        "check": "Inspect request"
+      },
+      {
+        "name": "Expired token",
+        "evidence_count": 0,
+        "check": "Inspect expiry"
+      }
+    ],
+    "limitations": "Operates only on supplied data. Inspect source for validation and assumptions; this helper cannot establish real-world correctness."
+  },
+  {
+    "id": "next-action",
+    "name": "next_action",
+    "title": "Next Action",
+    "description": "Next action using explicit input data. Returns a deterministic result without model calls or task execution.",
+    "signature": "(actions)",
+    "input": {
+      "actions": [
+        {
+          "name": "Deploy",
+          "blocked": true
+        },
+        {
+          "name": "Run tests"
+        }
+      ]
+    },
+    "output": {
+      "name": "Run tests"
+    },
+    "limitations": "Operates only on supplied data. Inspect source for validation and assumptions; this helper cannot establish real-world correctness."
+  },
+  {
+    "id": "chunk-tasks",
+    "name": "chunk_tasks",
+    "title": "Chunk Tasks",
+    "description": "Chunk tasks using explicit input data. Returns a deterministic result without model calls or task execution.",
+    "signature": "(tasks, size=5)",
+    "input": {
+      "tasks": [
+        "Inspect",
+        "Edit",
+        "Test",
+        "Review",
+        "Package",
+        "Publish"
+      ],
+      "size": 3
+    },
+    "output": [
+      [
+        "Inspect",
+        "Edit",
+        "Test"
+      ],
+      [
+        "Review",
+        "Package",
+        "Publish"
+      ]
+    ],
+    "limitations": "Operates only on supplied data. Inspect source for validation and assumptions; this helper cannot establish real-world correctness."
+  },
+  {
+    "id": "progress-state",
+    "name": "progress_state",
+    "title": "Progress State",
+    "description": "Progress state using explicit input data. Returns a deterministic result without model calls or task execution.",
+    "signature": "(step, total, completed, next_task)",
+    "input": {
+      "step": 3,
+      "total": 5,
+      "completed": "schema updated",
+      "next_task": "backfill column"
+    },
+    "output": "Step 3 of 5: schema updated. Next: backfill column.",
+    "limitations": "Operates only on supplied data. Inspect source for validation and assumptions; this helper cannot establish real-world correctness."
+  },
+  {
+    "id": "missing-fields",
+    "name": "missing_fields",
+    "title": "Missing Fields",
+    "description": "Missing fields using explicit input data. Returns a deterministic result without model calls or task execution.",
+    "signature": "(payload, required)",
+    "input": {
+      "payload": {
+        "project": "demo"
+      },
+      "required": [
+        "project",
+        "target"
+      ]
+    },
+    "output": [
+      "target"
+    ],
+    "limitations": "Operates only on supplied data. Inspect source for validation and assumptions; this helper cannot establish real-world correctness."
+  },
+  {
+    "id": "tool-capability",
+    "name": "tool_capability",
+    "title": "Tool Capability",
+    "description": "Tool capability using explicit input data. Returns a deterministic result without model calls or task execution.",
+    "signature": "(required, available)",
+    "input": {
+      "required": [
+        "edit",
+        "test"
+      ],
+      "available": [
+        "test"
+      ]
+    },
+    "output": {
+      "status": "BLOCKED",
+      "missing": [
+        "edit"
+      ]
+    },
+    "limitations": "Operates only on supplied data. Inspect source for validation and assumptions; this helper cannot establish real-world correctness."
+  },
+  {
+    "id": "destructive-preview",
+    "name": "destructive_preview",
+    "title": "Destructive Preview",
+    "description": "Destructive preview using explicit input data. Returns a deterministic result without model calls or task execution.",
+    "signature": "(targets)",
+    "input": {
+      "targets": [
+        "cache.tmp",
+        "local.env"
+      ]
+    },
+    "output": {
+      "targets": [
+        "cache.tmp",
+        "local.env"
+      ],
+      "count": 2,
+      "executed": false,
+      "requires_review": true
+    },
+    "limitations": "Operates only on supplied data. Inspect source for validation and assumptions; this helper cannot establish real-world correctness."
+  },
+  {
+    "id": "compare-options",
+    "name": "compare_options",
+    "title": "Compare Options",
+    "description": "Compare options using explicit input data. Returns a deterministic result without model calls or task execution.",
+    "signature": "(options, criteria)",
+    "input": {
+      "options": [
+        {
+          "name": "merge",
+          "history": "preserved"
+        },
+        {
+          "name": "rebase",
+          "history": "rewritten"
+        }
+      ],
+      "criteria": [
+        "history",
+        "risk"
+      ]
+    },
+    "output": [
+      {
+        "name": "merge",
+        "criteria": {
+          "history": "preserved",
+          "risk": "unknown"
+        }
+      },
+      {
+        "name": "rebase",
+        "criteria": {
+          "history": "rewritten",
+          "risk": "unknown"
+        }
+      }
+    ],
+    "limitations": "Operates only on supplied data. Inspect source for validation and assumptions; this helper cannot establish real-world correctness."
+  },
+  {
+    "id": "rollback-plan",
+    "name": "rollback_plan",
+    "title": "Rollback Plan",
+    "description": "Rollback plan using explicit input data. Returns a deterministic result without model calls or task execution.",
+    "signature": "(stages)",
+    "input": {
+      "stages": [
+        {
+          "stage": "switch reads",
+          "trigger": "error rate rises",
+          "rollback": "restore legacy reads",
+          "verification": "run compatibility checks"
+        }
+      ]
+    },
+    "output": [
+      {
+        "stage": "switch reads",
+        "trigger": "error rate rises",
+        "rollback": "restore legacy reads",
+        "verification": "run compatibility checks"
+      }
+    ],
+    "limitations": "Operates only on supplied data. Inspect source for validation and assumptions; this helper cannot establish real-world correctness."
+  },
+  {
+    "id": "resume-context",
+    "name": "resume_context",
+    "title": "Resume Context",
+    "description": "Resume context using explicit input data. Returns a deterministic result without model calls or task execution.",
+    "signature": "(completed, remaining, evidence)",
+    "input": {
+      "completed": [
+        "schema"
+      ],
+      "remaining": [
+        "backfill",
+        "verify"
+      ],
+      "evidence": [
+        "migration log"
+      ]
+    },
+    "output": {
+      "completed": [
+        "schema"
+      ],
+      "remaining": [
+        "backfill",
+        "verify"
+      ],
+      "evidence": [
+        "migration log"
+      ],
+      "next": "backfill"
+    },
+    "limitations": "Operates only on supplied data. Inspect source for validation and assumptions; this helper cannot establish real-world correctness."
+  },
+  {
+    "id": "partition-scope",
+    "name": "partition_scope",
+    "title": "Partition Scope",
+    "description": "Partition scope using explicit input data. Returns a deterministic result without model calls or task execution.",
+    "signature": "(tasks, scope)",
+    "input": {
+      "tasks": [
+        {
+          "name": "auth fix",
+          "scope": "auth"
+        },
+        {
+          "name": "new theme",
+          "scope": "ui"
+        }
+      ],
+      "scope": "auth"
+    },
+    "output": {
+      "active": [
+        {
+          "name": "auth fix",
+          "scope": "auth"
+        }
+      ],
+      "backlog": [
+        {
+          "name": "new theme",
+          "scope": "ui"
+        }
+      ]
+    },
+    "limitations": "Operates only on supplied data. Inspect source for validation and assumptions; this helper cannot establish real-world correctness."
+  },
+  {
+    "id": "verification-record",
+    "name": "verification_record",
+    "title": "Verification Record",
+    "description": "Verification record using explicit input data. Returns a deterministic result without model calls or task execution.",
+    "signature": "(command, status, artifact)",
+    "input": {
+      "command": "python -m unittest",
+      "status": "PASS",
+      "artifact": "test-output.txt"
+    },
+    "output": {
+      "command": "python -m unittest",
+      "status": "PASS",
+      "artifact": "test-output.txt"
+    },
+    "limitations": "Operates only on supplied data. Inspect source for validation and assumptions; this helper cannot establish real-world correctness."
+  },
+  {
+    "id": "validate-scores",
+    "name": "validate_scores",
+    "title": "Validate Scores",
+    "description": "Validate scores using explicit input data. Returns a deterministic result without model calls or task execution.",
+    "signature": "(scores)",
+    "input": {
+      "scores": {
+        "correctness": 4,
+        "autonomy": 4,
+        "actionability": 4,
+        "safety": 4,
+        "concision": 4
+      }
+    },
+    "output": true,
+    "limitations": "Operates only on supplied data. Inspect source for validation and assumptions; this helper cannot establish real-world correctness."
+  },
+  {
+    "id": "weighted-score",
+    "name": "weighted_score",
+    "title": "Weighted Score",
+    "description": "Weighted score using explicit input data. Returns a deterministic result without model calls or task execution.",
+    "signature": "(scores)",
+    "input": {
+      "scores": {
+        "correctness": 4,
+        "autonomy": 4,
+        "actionability": 4,
+        "safety": 4,
+        "concision": 4
+      }
+    },
+    "output": 4.0,
+    "limitations": "Operates only on supplied data. Inspect source for validation and assumptions; this helper cannot establish real-world correctness."
+  },
+  {
+    "id": "score-delta",
+    "name": "score_delta",
+    "title": "Score Delta",
+    "description": "Score delta using explicit input data. Returns a deterministic result without model calls or task execution.",
+    "signature": "(baseline, candidate)",
+    "input": {
+      "baseline": {
+        "correctness": 4,
+        "autonomy": 4,
+        "actionability": 4,
+        "safety": 4,
+        "concision": 4
+      },
+      "candidate": {
+        "correctness": 4.5,
+        "autonomy": 4.5,
+        "actionability": 4.5,
+        "safety": 4.5,
+        "concision": 4.5
+      }
+    },
+    "output": 0.5,
+    "limitations": "Operates only on supplied data. Inspect source for validation and assumptions; this helper cannot establish real-world correctness."
+  },
+  {
+    "id": "release-gate",
+    "name": "release_gate",
+    "title": "Release Gate",
+    "description": "Release gate using explicit input data. Returns a deterministic result without model calls or task execution.",
+    "signature": "(baseline, candidate, blockers, evidence_complete=False, comparable=False)",
+    "input": {
+      "baseline": {
+        "correctness": 4,
+        "autonomy": 4,
+        "actionability": 4,
+        "safety": 4,
+        "concision": 4
+      },
+      "candidate": {
+        "correctness": 4.5,
+        "autonomy": 4.5,
+        "actionability": 4.5,
+        "safety": 4.5,
+        "concision": 4.5
+      },
+      "blockers": 1,
+      "evidence_complete": true,
+      "comparable": true
+    },
+    "output": {
+      "released": false,
+      "status": "HELD",
+      "checks": {
+        "zero_blockers": false,
+        "correctness": true,
+        "safety": true,
+        "weighted": true,
+        "evidence_complete": true,
+        "comparable": true
+      }
+    },
+    "limitations": "Operates only on supplied data. Inspect source for validation and assumptions; this helper cannot establish real-world correctness."
+  },
+  {
+    "id": "compare-protocol",
+    "name": "compare_protocol",
+    "title": "Compare Protocol",
+    "description": "Compare protocol using explicit input data. Returns a deterministic result without model calls or task execution.",
+    "signature": "(baseline, candidate)",
+    "input": {
+      "baseline": {
+        "case_hash": "a",
+        "rubric_hash": "b",
+        "model": "recorded-model",
+        "runner": "runner-v1",
+        "tool_config_hash": "c",
+        "trials": 3,
+        "skill_hash": "bare"
+      },
+      "candidate": {
+        "case_hash": "a",
+        "rubric_hash": "b",
+        "model": "recorded-model",
+        "runner": "runner-v1",
+        "tool_config_hash": "c",
+        "trials": 3,
+        "skill_hash": "new-skill"
+      }
+    },
+    "output": {
+      "comparable": true,
+      "missing": [],
+      "mismatches": [],
+      "valid_trials": true
+    },
+    "limitations": "Operates only on supplied data. Inspect source for validation and assumptions; this helper cannot establish real-world correctness."
+  },
+  {
+    "id": "validate-coverage",
+    "name": "validate_coverage",
+    "title": "Validate Coverage",
+    "description": "Validate coverage using explicit input data. Returns a deterministic result without model calls or task execution.",
+    "signature": "(rows, cases, trials, conditions)",
+    "input": {
+      "rows": [
+        {
+          "case_id": "direct-answer",
+          "trial": 1,
+          "condition": "baseline"
+        }
+      ],
+      "cases": [
+        "direct-answer"
+      ],
+      "trials": 3,
+      "conditions": [
+        "baseline",
+        "candidate"
+      ]
+    },
+    "output": {
+      "complete": false,
+      "missing": [
+        [
+          "direct-answer",
+          1,
+          "candidate"
+        ],
+        [
+          "direct-answer",
+          2,
+          "baseline"
+        ],
+        [
+          "direct-answer",
+          2,
+          "candidate"
+        ],
+        [
+          "direct-answer",
+          3,
+          "baseline"
+        ],
+        [
+          "direct-answer",
+          3,
+          "candidate"
+        ]
+      ],
+      "unexpected": [],
+      "duplicates": 0
+    },
+    "limitations": "Operates only on supplied data. Inspect source for validation and assumptions; this helper cannot establish real-world correctness."
+  },
+  {
+    "id": "win-tie-loss",
+    "name": "win_tie_loss",
+    "title": "Win Tie Loss",
+    "description": "Win tie loss using explicit input data. Returns a deterministic result without model calls or task execution.",
+    "signature": "(deltas, tolerance=0)",
+    "input": {
+      "deltas": [
+        0.5,
+        0,
+        -0.6
+      ]
+    },
+    "output": {
+      "wins": 1,
+      "ties": 1,
+      "losses": 1
+    },
+    "limitations": "Operates only on supplied data. Inspect source for validation and assumptions; this helper cannot establish real-world correctness."
+  },
+  {
+    "id": "non-diagnostic-response",
+    "name": "non_diagnostic_response",
+    "title": "Non Diagnostic Response",
+    "description": "Non diagnostic response using explicit input data. Returns a deterministic result without model calls or task execution.",
+    "signature": "()",
+    "input": {},
+    "output": "No. A writing style or reading preference does not diagnose ADHD.",
+    "limitations": "Operates only on supplied data. Inspect source for validation and assumptions; this helper cannot establish real-world correctness."
+  },
+  {
+    "id": "outline-explanation",
+    "name": "outline_explanation",
+    "title": "Outline Explanation",
+    "description": "Outline explanation using explicit input data. Returns a deterministic result without model calls or task execution.",
+    "signature": "(topic)",
+    "input": {
+      "topic": "OAuth with PKCE"
+    },
+    "output": {
+      "topic": "OAuth with PKCE",
+      "sections": [
+        "Mechanism",
+        "Worked example",
+        "Tradeoffs",
+        "Failure modes",
+        "Verification"
+      ]
+    },
+    "limitations": "Operates only on supplied data. Inspect source for validation and assumptions; this helper cannot establish real-world correctness."
+  },
+  {
+    "id": "evidence-gaps",
+    "name": "evidence_gaps",
+    "title": "Evidence Gaps",
+    "description": "Evidence gaps using explicit input data. Returns a deterministic result without model calls or task execution.",
+    "signature": "(claims)",
+    "input": {
+      "claims": [
+        {
+          "claim": "Tests passed",
+          "evidence": [
+            "log"
+          ]
+        },
+        {
+          "claim": "Production works",
+          "evidence": []
+        }
+      ]
+    },
+    "output": [
+      "Production works"
+    ],
+    "limitations": "Operates only on supplied data. Inspect source for validation and assumptions; this helper cannot establish real-world correctness."
+  }
+]

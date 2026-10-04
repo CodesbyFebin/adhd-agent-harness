@@ -1,0 +1,17 @@
+{
+  "rows": [
+    {
+      "case_id": "direct-answer",
+      "trial": 1,
+      "condition": "baseline"
+    }
+  ],
+  "cases": [
+    "direct-answer"
+  ],
+  "trials": 3,
+  "conditions": [
+    "baseline",
+    "candidate"
+  ]
+}

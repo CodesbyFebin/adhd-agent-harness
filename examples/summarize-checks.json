@@ -1,0 +1,12 @@
+{
+  "checks": [
+    {
+      "name": "lint",
+      "status": "PASS"
+    },
+    {
+      "name": "integration",
+      "status": "FAIL"
+    }
+  ]
+}

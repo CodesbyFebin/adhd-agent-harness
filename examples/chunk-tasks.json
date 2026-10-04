@@ -1,0 +1,11 @@
+{
+  "tasks": [
+    "Inspect",
+    "Edit",
+    "Test",
+    "Review",
+    "Package",
+    "Publish"
+  ],
+  "size": 3
+}

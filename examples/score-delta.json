@@ -1,0 +1,16 @@
+{
+  "baseline": {
+    "correctness": 4,
+    "autonomy": 4,
+    "actionability": 4,
+    "safety": 4,
+    "concision": 4
+  },
+  "candidate": {
+    "correctness": 4.5,
+    "autonomy": 4.5,
+    "actionability": 4.5,
+    "safety": 4.5,
+    "concision": 4.5
+  }
+}

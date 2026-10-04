@@ -1,0 +1,12 @@
+{
+  "completed": [
+    "schema"
+  ],
+  "remaining": [
+    "backfill",
+    "verify"
+  ],
+  "evidence": [
+    "migration log"
+  ]
+}

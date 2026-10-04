@@ -1,0 +1,16 @@
+{
+  "options": [
+    {
+      "name": "merge",
+      "history": "preserved"
+    },
+    {
+      "name": "rebase",
+      "history": "rewritten"
+    }
+  ],
+  "criteria": [
+    "history",
+    "risk"
+  ]
+}

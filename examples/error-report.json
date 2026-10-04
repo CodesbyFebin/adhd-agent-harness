@@ -1,0 +1,4 @@
+{
+  "location": "auth.spec.ts:42",
+  "symptom": "expected 200, got 401"
+}

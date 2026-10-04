@@ -1,0 +1,5 @@
+{
+  "command": "python -m unittest",
+  "status": "PASS",
+  "artifact": "test-output.txt"
+}

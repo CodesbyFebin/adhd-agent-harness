@@ -1,0 +1,14 @@
+{
+  "hypotheses": [
+    {
+      "name": "Expired token",
+      "evidence_count": 0,
+      "check": "Inspect expiry"
+    },
+    {
+      "name": "Missing header",
+      "evidence_count": 1,
+      "check": "Inspect request"
+    }
+  ]
+}

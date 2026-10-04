@@ -1,0 +1,6 @@
+{
+  "step": 3,
+  "total": 5,
+  "completed": "schema updated",
+  "next_task": "backfill column"
+}

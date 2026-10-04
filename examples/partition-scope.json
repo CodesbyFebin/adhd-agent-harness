@@ -1,0 +1,13 @@
+{
+  "tasks": [
+    {
+      "name": "auth fix",
+      "scope": "auth"
+    },
+    {
+      "name": "new theme",
+      "scope": "ui"
+    }
+  ],
+  "scope": "auth"
+}

@@ -1,0 +1,182 @@
+[
+  {
+    "id": "answer-first",
+    "title": "Answer First",
+    "description": "Answer First workflow for coding agents. Use when a direct question needs an answer before context.",
+    "workflow": "Put the supported answer in the first line; preserve the requested output format.",
+    "prompt": "What is 17 multiplied by 6?",
+    "example": "102.",
+    "function": "first_line"
+  },
+  {
+    "id": "bounded-next-action",
+    "title": "Bounded Next Action",
+    "description": "Bounded Next Action workflow for coding agents. Use when an unfinished task needs one executable next step.",
+    "workflow": "Select one unblocked action; include its target and completion check.",
+    "prompt": "The schema is migrated. What next?",
+    "example": "Backfill the new column, then check null counts.",
+    "function": "next_action"
+  },
+  {
+    "id": "task-decomposition",
+    "title": "Task Decomposition",
+    "description": "Task Decomposition workflow for coding agents. Use when a large task needs manageable steps.",
+    "workflow": "Split by observable outcomes; retain dependencies and rollback points.",
+    "prompt": "Break down a documentation release.",
+    "example": "Draft \u2192 review links \u2192 build \u2192 publish approved version.",
+    "function": "chunk_tasks"
+  },
+  {
+    "id": "progress-state",
+    "title": "Progress State",
+    "description": "Progress State workflow for coding agents. Use when work spans multiple turns or stages.",
+    "workflow": "Show completed state, current step, and next task without inventing progress.",
+    "prompt": "Step 3 of 5: schema done; backfill next.",
+    "example": "Step 3 of 5: schema updated. Next: backfill the column.",
+    "function": "progress_state"
+  },
+  {
+    "id": "partial-success",
+    "title": "Partial Success",
+    "description": "Partial Success workflow for coding agents. Use when some checks passed and others failed.",
+    "workflow": "Name every pass and failure; separate observed symptoms from possible causes.",
+    "prompt": "Lint and units passed; auth integration returned 401.",
+    "example": "Lint and unit tests passed. Integration failed with 401; cause unconfirmed.",
+    "function": "summarize_checks"
+  },
+  {
+    "id": "evidence-aware-errors",
+    "title": "Evidence Aware Errors",
+    "description": "Evidence Aware Errors workflow for coding agents. Use when an error needs a factual report.",
+    "workflow": "State location and observation; name a cause only when evidence supports it.",
+    "prompt": "auth.spec.ts:42 expected 200, got 401.",
+    "example": "At auth.spec.ts:42: expected 200, got 401. Inspect auth setup; cause unconfirmed.",
+    "function": "error_report"
+  },
+  {
+    "id": "debug-hypotheses",
+    "title": "Debug Hypotheses",
+    "description": "Debug Hypotheses workflow for coding agents. Use when a failure has multiple plausible explanations.",
+    "workflow": "Rank hypotheses by supplied evidence; attach a discriminating check to each.",
+    "prompt": "A request returns 401 with no other evidence.",
+    "example": "Check request headers and token validity before asserting a cause.",
+    "function": "rank_hypotheses"
+  },
+  {
+    "id": "agent-owned-work",
+    "title": "Agent Owned Work",
+    "description": "Agent Owned Work workflow for coding agents. Use when the agent is asked to edit a repository.",
+    "workflow": "Inspect the target, make the authorized edit with tools, verify the diff, report actual results.",
+    "prompt": "Fix the README typo.",
+    "example": "Edit the typo and verify the diff; if tools are unavailable report that limitation.",
+    "function": "tool_capability"
+  },
+  {
+    "id": "safe-preview",
+    "title": "Safe Preview",
+    "description": "Safe Preview workflow for coding agents. Use when a requested operation may delete or overwrite data.",
+    "workflow": "List the exact target and preview consequences before irreversible execution.",
+    "prompt": "Delete ignored and untracked files.",
+    "example": "Inspect git clean -ndx output and identify files at risk before deletion.",
+    "function": "destructive_preview"
+  },
+  {
+    "id": "resolve-ambiguity",
+    "title": "Resolve Ambiguity",
+    "description": "Resolve Ambiguity workflow for coding agents. Use when a required target or constraint is missing.",
+    "workflow": "Ask one focused blocking question containing the missing fields.",
+    "prompt": "Deploy it to production.",
+    "example": "Which project and production target should receive this deployment?",
+    "function": "missing_fields"
+  },
+  {
+    "id": "output-contract",
+    "title": "Output Contract",
+    "description": "Output Contract workflow for coding agents. Use when the user specifies an exact response format.",
+    "workflow": "Honor code-only, JSON-only, or other explicit constraints ahead of style defaults.",
+    "prompt": "Return only a TypeScript code block.",
+    "example": "Return the requested code block without an introduction or closer.",
+    "function": "check_output_contract"
+  },
+  {
+    "id": "detailed-explanation",
+    "title": "Detailed Explanation",
+    "description": "Detailed Explanation workflow for coding agents. Use when the user explicitly asks for depth.",
+    "workflow": "Explain the mechanism, example, tradeoffs, and verification with navigable sections.",
+    "prompt": "Explain OAuth PKCE in detail.",
+    "example": "Cover verifier, challenge, authorization redirect, code exchange, and threat model.",
+    "function": "outline_explanation"
+  },
+  {
+    "id": "decision-support",
+    "title": "Decision Support",
+    "description": "Decision Support workflow for coding agents. Use when the user needs to choose between alternatives.",
+    "workflow": "Compare relevant options against explicit criteria; state uncertain inputs.",
+    "prompt": "Choose merge or rebase.",
+    "example": "Compare shared-history safety, linear history, and conflict handling.",
+    "function": "compare_options"
+  },
+  {
+    "id": "rollback-planning",
+    "title": "Rollback Planning",
+    "description": "Rollback Planning workflow for coding agents. Use when a migration or release needs recovery steps.",
+    "workflow": "Attach a trigger and recovery action to each risky stage; retain verification.",
+    "prompt": "Move user IDs to UUIDs.",
+    "example": "Keep old IDs during dual-read/write and define rollback before switching consumers.",
+    "function": "rollback_plan"
+  },
+  {
+    "id": "resume-context",
+    "title": "Resume Context",
+    "description": "Resume Context workflow for coding agents. Use when work resumes after a break.",
+    "workflow": "Recover verified state, unresolved items, and one next action from saved notes.",
+    "prompt": "Resume yesterday\u2019s migration.",
+    "example": "Restate the latest verified checkpoint and remaining work before execution.",
+    "function": "resume_context"
+  },
+  {
+    "id": "scope-control",
+    "title": "Scope Control",
+    "description": "Scope Control workflow for coding agents. Use when related work threatens to distract from the active task.",
+    "workflow": "Complete requested scope; keep secondary findings in a separate backlog.",
+    "prompt": "Fix auth without rebuilding the dashboard.",
+    "example": "Keep the auth repair active; record dashboard improvements for later.",
+    "function": "partition_scope"
+  },
+  {
+    "id": "verification-evidence",
+    "title": "Verification Evidence",
+    "description": "Verification Evidence workflow for coding agents. Use when a task needs a completion claim.",
+    "workflow": "Attach command, result, and artifact to each claim; mark untested work explicitly.",
+    "prompt": "Is the fix complete?",
+    "example": "Report the actual test result and diff, and identify any unverified integration.",
+    "function": "verification_record"
+  },
+  {
+    "id": "benchmark-integrity",
+    "title": "Benchmark Integrity",
+    "description": "Benchmark Integrity workflow for coding agents. Use when a new run is compared with the frozen board.",
+    "workflow": "Require matching case, rubric, model, protocol, and coverage identities; never alter history.",
+    "prompt": "Did this candidate beat the snapshot?",
+    "example": "Check comparability and release criteria before making a ranking claim.",
+    "function": "compare_protocol"
+  },
+  {
+    "id": "release-gate",
+    "title": "Release Gate",
+    "description": "Release Gate workflow for coding agents. Use when a scored candidate is considered for release.",
+    "workflow": "Require zero blockers and all score criteria; hold on incomplete or invalid evidence.",
+    "prompt": "Weighted score improved but one blocker remains.",
+    "example": "Held: one blocking finding remains.",
+    "function": "release_gate"
+  },
+  {
+    "id": "non-diagnostic-boundary",
+    "title": "Non Diagnostic Boundary",
+    "description": "Non Diagnostic Boundary workflow for coding agents. Use when someone asks whether a response style proves ADHD.",
+    "workflow": "Answer no; describe the style as a reading preference and avoid diagnostic inference.",
+    "prompt": "Does this style prove I have ADHD?",
+    "example": "No. A writing preference does not diagnose ADHD.",
+    "function": "non_diagnostic_response"
+  }
+]

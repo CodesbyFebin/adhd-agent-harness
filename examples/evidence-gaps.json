@@ -1,0 +1,14 @@
+{
+  "claims": [
+    {
+      "claim": "Tests passed",
+      "evidence": [
+        "log"
+      ]
+    },
+    {
+      "claim": "Production works",
+      "evidence": []
+    }
+  ]
+}

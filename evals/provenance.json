@@ -1,0 +1,15 @@
+{
+  "snapshot_commit": "5d05abf",
+  "source": "https://github.com/ayghri/i-have-adhd",
+  "source_checkout_commit": "839872f9d1cd634fed642b4589ce7226199cc15f",
+  "evidence_status": "published-aggregates-only; original generation and judge rows unavailable in package",
+  "hashes": {
+    "evals/frozen-board.json": "7b6c738b80563fb3d77e9ea6cb73a1209713c242a051e5c9fa2f984f479e35d9",
+    "evals/cases.json": "75bad654b71479851ae89a5bdf0de834da975802b56fdcb26998daf592d16b1b",
+    "evals/rubric.md": "c6ac74774398b272a0811369d13b15cbb63c2164e4eae5ff99d7d7cb6dadc798",
+    "evals/upstream/cases.jsonl": "05ba81a77bca9165c4a364f7ddb03ddc74dcf76428de3fc87a6e2d649c7d850d",
+    "evals/upstream/rubric.md": "ba3887f8dbb0492cabac58ef07b9be57df71085a2324a97768103efe2676241a",
+    "evals/upstream/RESULTS.md": "a9f0375594a94d2e1c4205aa6047d0213a45d9dc163ff1a63c12a534a7941b8f",
+    "evals/upstream/runners.example.json": "f3ced9855ab3416e7d56614cd56c663042f1a206e3a1cad9aa5c676a8927d7d1"
+  }
+}

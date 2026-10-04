@@ -1,0 +1,6 @@
+{
+  "targets": [
+    "cache.tmp",
+    "local.env"
+  ]
+}

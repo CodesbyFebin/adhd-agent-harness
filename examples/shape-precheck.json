@@ -1,0 +1,7 @@
+{
+  "text": "Lint passed. Integration failed.",
+  "facts": [
+    "lint",
+    "integration"
+  ]
+}

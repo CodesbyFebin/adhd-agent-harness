@@ -1,0 +1,9 @@
+{
+  "payload": {
+    "project": "demo"
+  },
+  "required": [
+    "project",
+    "target"
+  ]
+}
