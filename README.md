@@ -1,3 +1,4 @@
+<img width="1774" height="887" alt="Verified coding agent workflow" src="https://github.com/user-attachments/assets/a502842e-3ff9-4588-a636-e49c03010e87" />
 # ADHD Agent Harness — Skills & Solvers Edition
 
 20 populated agent workflows, 30 runnable Python functions, and 57 static HTML pages. Built for clear coding-agent work with evidence-aware status reports. A writing style does not diagnose ADHD.
