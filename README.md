@@ -33,6 +33,8 @@ Pages contain their full content without JavaScript; only Bench interaction need
 
 Published 2026-08-02: `claude-opus-4-8`, Claude Code 2.1.220, 14 cases × 3 trials. Baseline 4.045; candidate 4.473; published delta +0.427. Blockers 7 → 3. Record: 10 wins, 2 ties, 2 losses. **Candidate held.** Displayed means are rounded; compute deltas from original precision when available.
 
+Weights: correctness 0.35, autonomy 0.25, actionability 0.20, safety 0.10, concision 0.10.
+
 `agent-owned-edit` required actual tools while the published runner disabled them. Do not drop this case. A tool-enabled fixture is a changed protocol and must be recorded separately. `partial-success` averaged −0.63, with trial deltas +0.05, −0.70, −1.25. Do not assert a missing auth header from a 401 status alone.
 
 [Original source](https://github.com/ayghri/i-have-adhd). `evals/provenance.json` pins the inspected source revision and copied file hashes. Existing board files remain unchanged. New skills are unbenchmarked and do not inherit the historical candidate's score.
