@@ -2,7 +2,7 @@
   "snapshot_commit": "5d05abf",
   "source": "https://github.com/ayghri/i-have-adhd",
   "source_checkout_commit": "839872f9d1cd634fed642b4589ce7226199cc15f",
-  "evidence_status": "published-aggregates-only; original generation and judge rows unavailable in package",
+  "evidence_status": "published summary pinned in evals/evidence.json; 84 trial rows absent; prose excerpts do not count",
   "hashes": {
     "evals/frozen-board.json": "7b6c738b80563fb3d77e9ea6cb73a1209713c242a051e5c9fa2f984f479e35d9",
     "evals/cases.json": "75bad654b71479851ae89a5bdf0de834da975802b56fdcb26998daf592d16b1b",

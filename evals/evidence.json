@@ -1,0 +1,25 @@
+{
+  "evidence_complete": false,
+  "published_summary_pinned": true,
+  "trial_rows_present": false,
+  "summary_path": "evals/upstream/RESULTS.md",
+  "summary_sha256": "a9f0375594a94d2e1c4205aa6047d0213a45d9dc163ff1a63c12a534a7941b8f",
+  "required": {
+    "cases": 14,
+    "conditions": ["baseline", "candidate"],
+    "trials": 3,
+    "rows": 84
+  },
+  "rows": [],
+  "prose_excerpts": [
+    {
+      "case_id": "partial-success",
+      "source": "evals/upstream/RESULTS.md",
+      "kind": "prose-excerpt",
+      "counts_as_row": false,
+      "same_direction": false,
+      "trial_deltas": [0.05, -0.7, -1.25],
+      "note": "One case, three quoted deltas. Not dimension scores and not judge text. Upstream calls them directionally consistent; the signs are not."
+    }
+  ]
+}

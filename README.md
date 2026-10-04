@@ -20,7 +20,7 @@ Open http://localhost:8000. The ZIP includes the generated `dist/` site and ever
 - `skills/`: 20 SKILL.md workflows with triggers, bounded instructions, examples, and linked helpers. These are repository artifacts, not installed personal ChatGPT skills.
 - `src/solvers.py`: 30 deterministic functions. `data/functions.json` records signatures and populated input/output examples; `examples/` contains CLI-ready JSON.
 - `dist/`: Board, Bench, Skills, Functions, Gate, Rules, and 50 detail pages. Mobile layouts, keyboard navigation, semantic HTML, canonical URLs, unique metadata, JSON-LD, sitemap, robots.txt, and llms.txt.
-- `evals/`: preserved historical board plus pinned upstream published source and SHA-256 provenance. Original generation and judge rows are not included. The three partial-success deltas quoted in upstream RESULTS.md (+0.05, -0.70, -1.25) are not judge rows. evidence_complete stays false until the original records exist: 14 cases × 2 conditions × 3 trials. Retyping those three numbers does not close the check.
+- `evals/`: preserved historical board plus pinned upstream published source and SHA-256 provenance. `evals/evidence.json` splits the evidence row. The published summary is pinned and passes. Trial rows are a separate row and fail: 0 of 84. The three partial-success deltas (+0.05, -0.70, -1.25) are a prose excerpt and do not count. `evidence_complete` stays false.
 - `tests/`: catalog, links, release negative controls, invalid scores, protocol mismatch, coverage, and output-contract checks.
 
 ## Publish and indexing
